@@ -1,14 +1,11 @@
-create table user (
- userId varchar2(30),  
- groupId varchar2(30),  
- username varchar2(30),  
- password varchar2(30),   
- firstName varchar2(30),  
- middleName varchar2(30),  
- lastName varchar2(30),  
- phoneNumber varchar2(30),  
- verificationCode varchar2(30),  
- resetPaswordCode varchar2(30),  
- passwordQuestion varchar2(30),  
- passwordAnswer varchar2(30)
-) 
+create table users ( userId int, groupId int, username varchar(20),  
+ password varchar(30),   
+ firstName varchar(30),  
+ middleName varchar(30),  
+ lastName varchar(30),  
+ phoneNumber int,  
+ verificationCode varchar(30),  
+ resetPasswordCode varchar(30),  
+ passwordQuestion varchar(30),  
+ passwordAnswer varchar(30)
+); 

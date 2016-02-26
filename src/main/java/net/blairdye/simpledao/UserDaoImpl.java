@@ -10,7 +10,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.util.StringUtils;
 
-public class UserDaoImpl {  
+public class UserDaoImpl implements UserDao {  
 		 private DataSource dataSource;  
 		 private JdbcTemplate jdbcTemplate;  
 		  
@@ -43,18 +43,18 @@ public class UserDaoImpl {
 		 private static final class UserMapper implements RowMapper<User> {  
 		  public User mapRow(ResultSet rs, int rowNum) throws SQLException {  
 		   User user = new User();  
-		   user.setUserId(rs.getInt("user_id"));  
-		   user.setGroupId(rs.getInt("group_id"));  
+		   user.setUserId(rs.getInt("userid"));  
+		   user.setGroupId(rs.getInt("groupid"));  
 		   user.setUsername(rs.getString("username"));  
 		   user.setPassword(rs.getString("password"));  
-		   user.setFirstName(rs.getString("first_name"));  
-		   user.setMiddleName(rs.getString("middle_name"));  
-		   user.setLastName(rs.getString("last_name"));  
-		   user.setPhoneNumber(rs.getInt("phone_number"));  
-		   user.setVerificationCode(rs.getString("verification_code"));  
-		   user.setResetPaswordCode(rs.getString("reset_pasword_code"));  
-		   user.setPasswordQuestion(rs.getString("password_question"));  
-		   user.setPasswordAnswer(rs.getString("password_answer"));  
+		   user.setFirstName(rs.getString("firstname"));  
+		   user.setMiddleName(rs.getString("middlename"));  
+		   user.setLastName(rs.getString("lastname"));  
+		   user.setPhoneNumber(rs.getInt("phonenumber"));  
+		   user.setVerificationCode(rs.getString("verificationcode"));  
+		   user.setResetPaswordCode(rs.getString("resetpasswordcode"));  
+		   user.setPasswordQuestion(rs.getString("passwordquestion"));  
+		   user.setPasswordAnswer(rs.getString("passwordanswer"));  
 		   return user;  
 		  }  
 		 }  
