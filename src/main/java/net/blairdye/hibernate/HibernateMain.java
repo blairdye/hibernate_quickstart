@@ -13,6 +13,7 @@ public class HibernateMain {
 	private HibernateMain(){}
 	
 	private void findUser(UserDao userDao){
+		//User user = userDao.getUserByUserName("blaird");
 		User user = userDao.getUserByUserName("blaird");
 		System.out.println("user="+user);
 	}
@@ -22,9 +23,12 @@ public class HibernateMain {
 		
 	    ApplicationContext context = 
 	             new ClassPathXmlApplicationContext("applicationContext.xml");
+	    //java.sql.Connection conn = datasource.getConnection();
+	    //Session session = sessionFactory.openSession(conn);
 	    UserDao userDao = (UserDao)context.getBean("userDao");
 	    HibernateMain hm = new HibernateMain();
 	    hm.findUser(userDao);
+	    
 	      
 	    /*
 		Webmail webmail = new Webmail();

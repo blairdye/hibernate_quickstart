@@ -1,6 +1,15 @@
 package net.blairdye.simpledao;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "USERS")
 public class User {  
+	@Id
+	@Column(name="userid")
     private int userId;  
     private int groupId;  
     private String username;  
@@ -10,7 +19,7 @@ public class User {
     private String lastName;  
     private int phoneNumber;  
     private String verificationCode;  
-    private String resetPaswordCode;  
+    private String resetPasswordCode;  
     private String passwordQuestion;  
     private String passwordAnswer;
 	public int getUserId() {
@@ -67,11 +76,11 @@ public class User {
 	public void setVerificationCode(String verificationCode) {
 		this.verificationCode = verificationCode;
 	}
-	public String getResetPaswordCode() {
-		return resetPaswordCode;
+	public String getResetPasswordCode() {
+		return resetPasswordCode;
 	}
-	public void setResetPaswordCode(String resetPaswordCode) {
-		this.resetPaswordCode = resetPaswordCode;
+	public void setResetPasswordCode(String resetPasswordCode) {
+		this.resetPasswordCode = resetPasswordCode;
 	}
 	public String getPasswordQuestion() {
 		return passwordQuestion;
