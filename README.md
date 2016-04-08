@@ -59,3 +59,9 @@ In our case, we have a datasource already created (by Spring) so we need to prog
 
 This project will probably serve as a basis for other code. The best way to do this is to move it away from its original source and work with it. 
 
+###Tidy up list
+
+* Implement cleaner logging
+* Create unit tests
+* Add more CRUD actions in Hibernate
+
