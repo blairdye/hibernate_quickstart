@@ -6,4 +6,5 @@ public interface UserDao {
 	 public List<User> getAllUsers();  
 	 public User getUserByUserName(String userName);  
 	 public void createUser(User user);  
+	 public void cleanup();
 }

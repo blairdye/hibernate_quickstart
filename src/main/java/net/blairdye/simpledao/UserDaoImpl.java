@@ -13,7 +13,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 
 public class UserDaoImpl implements UserDao {  
-	private DataSource dataSource;  
+	//private DataSource dataSource;  
 	private Session session;
 
 	public void createUser(User user) {
@@ -39,9 +39,9 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	public void setDataSource(DataSource dataSource) throws SQLException {
-		this.dataSource = dataSource;
+		//this.dataSource = dataSource;
 		// this.jdbcTemplate = new JdbcTemplate(this.dataSource);
-		java.sql.Connection conn = dataSource.getConnection();
+		//java.sql.Connection conn = dataSource.getConnection();
 		Configuration configuration = new Configuration()
 				.setProperty("hibernate.current_session_context_class", "thread").addAnnotatedClass(User.class)
 				.configure();
@@ -51,9 +51,17 @@ public class UserDaoImpl implements UserDao {
 		session = sf.openSession();
 
 	}
-
+	
+	public void cleanup(){
+		//not needed as the DB disappears after program ends
+		//if(session !=null && session.isOpen())
+			//session.close();
+		
+	}
+/*
 	public DataSource getDataSource() {
 		return dataSource;  
-	}  
+	} 
+*/	 
 }
 

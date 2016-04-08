@@ -36,6 +36,7 @@ public class HibernateMain {
 	    HibernateMain hm = new HibernateMain();
 	    hm.findUser(userDao);
 	    hm.findAllUsers(userDao);
+	    userDao.cleanup();
 	}
 
 }
